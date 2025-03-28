@@ -46,5 +46,61 @@ What are the persistent volumes created by the remote engine used for? \
 They are used to store those setting/data that we use like odbc.ini, log files, project, DataSets, etc. We need to preserve those setting/data when container crashed or shutdown.
 
 How do we mount those folders we need from the server into the remote engine container? \
-In the screenshot, we use the --mount-dir setting when we create the docker/podman to define the folder within the server that we plan to mount onto the container. In the setting we also need to specify the path within the container that we want to use.
+In the screenshot, we use the --mount-dir setting when we create the docker/podman to define the folder within the server that we plan to mount onto the container. In the setting we also need to specify the path within the container that we want to use. \
+![image](https://github.com/user-attachments/assets/6feff067-6ffd-428a-828f-4c1c15de3277)
+
+This also applicable to any NFS, SMB, COS, etc if you can mount it as a folder on the server. These are some examples from Google search – \
+•	Mounting an SMB Share on Linux - https://medium.com/@Josh_Rollins/mounting-an-smb-share-on-linux-57d6c2fb18e3 \
+•	Mounting NFS shares on RHEL 9 - https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_file_systems/mounting-nfs-shares_managing-file-systems \
+•	Mounting Amazon EFS on Linux - https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html \
+•	How to mount Azure Blob Storage as a file system on Linux - https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-how-to-deploy?tabs=RHEL \
+
+What are the persistent volumes created by the remote engine? \
+In the screenshot, we use the --volume-dir setting when we create the docker/podman to define the folder within the server as persistent storage for the remote engine. \
+![image](https://github.com/user-attachments/assets/5f0e2175-7083-4d52-814e-d9d04494469b)
+
+What are the hostnames/URLs required for the remote engine setup? \
+The server allows outbound traffic to the following URLs: \
+1.	icr.io – Container repository \
+2.	iam.cloud.ibm.com – Authentication with IBM Cloud \
+3.	au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com – Control Plane for Sydney data center \
+4.	*.cloud-object-storage.appdomain.cloud \
+
+# Some examples of folder navigation between server and container for remote engine.
+
+How to find the Project folder in the server where the docker/podman is running? \
+`/<volume_dir>/ds-storage/PXRuntime/Projects/<ProjectID>`
+
+How to find the Project folder in the container? \
+`/ ds-storage/PXRuntime/Projects/<ProjectID>`
+
+How to find the odbc.ini file in the server where the docker/podman is running? \
+`/<volume_dir>/ds-storage/connectors/odbc/config`
+
+How to find the odbc.ini file in the container? \
+`/ds-storage/connectors/odbc/config`
+
+How to find the job log folder in the server where the docker/podman is running? \
+`/<volume_dir>/ds-storage/PXRuntime/Projects/<ProjectID>/jobs/<JobID>/runs/<JobRunID>`
+
+How to find the job log folder in the container? \
+`/ds-storage/PXRuntime/Projects/<ProjectID>/jobs/<JobID>/runs/<JobRunID>`
+
+# Some examples on using the UI.
+
+How to find the JobID using the UI? \
+You can find it within the Project -> Jobs -> Click on the Jobs (DSFlow.DataStage job) you want to see. This same UI will project you all the job run info as well as per the screenshot below \
+![image](https://github.com/user-attachments/assets/984707f1-1e84-4714-a8de-facf33b349b8)
+
+How to see the job log using the UI? \
+From the above screenshot, you just need to click on one of the job run (Mar 25, 2025 3:47:28 PM) and you will be able to see the job logs as below. \
+![image](https://github.com/user-attachments/assets/d269d568-6404-4165-93e2-19ad797eb77f) \
+![image](https://github.com/user-attachments/assets/e2c8a1d0-5bb6-4d15-a468-f72afd62ced8) \
+![image](https://github.com/user-attachments/assets/5615c5e8-8cac-4e65-b6b8-0eebd00509e4)
+
+How to access the project administration setting for Data Stage UI? \
+You can find it within the Project you click on -> Manage -> General -> DataStage in the screenshot below. In my example, I click on a project name DSaaS Anywhere. \
+![image](https://github.com/user-attachments/assets/0f104565-1908-45b1-a2a6-e143aa4851c9)
+
+
 
