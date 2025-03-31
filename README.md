@@ -113,7 +113,7 @@ bash ./DSaaSAnywhere_vars.sh
 Source ./DSaaSAnywhere_vars.sh
 ```
 
-In this example, I created a remote engine using the variables ${ENGINE_SYD10} which is the UNIQUE_ENGINE_NAME in my variables file. I define multiple Engine Name variables to cater for multiple engines that I plan to create. These are the values I have set in the respective variables \
+In this example, I created a remote engine using the variables from the variables file. I define multiple Engine Name, Volume Directory and Mount Directory variables to cater for multiple engines that I plan to create. These are the values I have set in the respective variables \
 - ${ENGINE_SYD10} is `remote_engine_ibmcloud_SYD-SYD10`
 - ${DS_MEMORY} is `16G`
 - ${DS_CPUS} is `4`
@@ -134,3 +134,31 @@ In this example, I created a remote engine using the variables ${ENGINE_SYD10} w
                     --volume-dir ${VOLUME_DIR_SYD10} \
                     --mount-dir "${MOUNT_DIR_SYD10}"
 ```
+
+In this example, I created a remote engine using the variables from the variables file. I define multiple Engine Name, Volume Directory and Mount Directory variables to cater for multiple engines that I plan to create. These are the values I have set in the respective variables \
+- ${ENGINE_SYD11} is `remote_engine_ibmcloud_SYD-SYD11`
+- ${DS_MEMORY} is `16G`
+- ${DS_CPUS} is `4`
+- ${DATA_CENTER} is `sydprod`
+- ${VOLUME_DIR_SYD11} is `/EnginePV/SYD-SYD11`
+- ${MOUNT_DIR_SYD11} is `/opt/SYD-SYD10:/ds-storage/SYD-SYD11`
+- ${REMOTE_ENGINE_BATCH_SIZE} is `10`
+- ${VERSION} is `true`
+
+```
+./dsengine.sh start -n "${ENGINE_SYD11}" \
+                    -a "${IBMCLOUD_APIKEY}" \
+                    -e "${ENCRYPTION_KEY}" \
+                    -i "${ENCRYPTION_IV}" \
+                    -p "${IBMCLOUD_CONTAINER_REGISTRY_APIKEY}" \
+                    --project-id "${PROJECT_PROD}" \
+                    --home ${DATA_CENTER} \
+                    --memory ${DS_MEMORY} \
+                    --cpus ${DS_CPUS} \
+                    --volume-dir ${VOLUME_DIR_SYD11} \
+                    --mount-dir "${MOUNT_DIR_SYD11}" \
+                    --env-vars REMOTE_ENGINE_BATCH_SIZE=${REMOTE_ENGINE_BATCH_SIZE} \
+                    --select-version ${VERSION}
+```
+
+![image](https://github.com/user-attachments/assets/ce5ec9d6-7f6b-4128-a300-51b5f31dd642)
