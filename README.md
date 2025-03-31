@@ -73,7 +73,7 @@ You can find it within the Project you click on -> Manage -> General -> DataStag
 # Some examples on creating and cleanup engine
 
 All command in the examples here are based on variables in this file (DSaaSAnywhere_vars.sh). \
-Please make sure you change all the variables to values that is applicable to your environment. \
+Please make sure you change all the variables to values that is applicable to your environment.
 
 To load or use the variables from the variables files.
 ```
