@@ -34,11 +34,11 @@ export IBMCLOUD_CONTAINER_REGISTRY_APIKEY=<IBMCloudContainerAPIKey>
 export IBMCLOUD_APIKEY=<IBMCloudAPIKey>
 
 ## The remote engine name you define. This will need to be unqiue and you can have multiple engine within the same server as long as they have difference name.
-## -n ${UNIQUE_ENGINE_NAME}
+## -n "${UNIQUE_ENGINE_NAME}"
 export UNIQUE_ENGINE_NAME=<UniqueEngineName>
 
 ## Sets the target IBM Cloud enviroment to either ypprod (Dallas data center - default), frprod (Frankfurt data center), sydprod (Sydney data center), or  torprod (Toronto data center). The project associated with this engine instance must be in same data center.
-## --home ${DATA_CENTER}: 
+## --home ${DATA_CENTER} 
 export DATA_CENTER=sydprod
 
 ## Sets the maximum amount of memory the engine can use. The value takes a positive integer, followed by a suffix of m/M, g/G, to indicate megabytes or gigabytes. Default is 4G.
@@ -65,7 +65,7 @@ export VERSION=<EngineVersion>
 export MOUNT_DIR="</path/to/local_dir:/path/on/container>"
 
 ## Set to true if you want to remove the existing remote engine container. By default, this flag is set to false and if a stopped existing container is found, it is restarted or if a running existing container is found, the script is aborted.
-## --force-renew: 
+## --force-renew ${FORCE_RENEW}
 ## --force-renew true
 ## export FORCE_RENEW=true
 
