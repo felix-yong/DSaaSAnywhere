@@ -53,8 +53,17 @@ cpdctl dsjob get-job --project-id ${PROJECT_PROD} --name "DSFlow.DataStage job"
 ```
 ![image](https://github.com/user-attachments/assets/d63ec230-49e7-4964-ba37-f0396f0bb3a1)
 
+This command list the status of the job using job id based on the last job run.
+```
+cpdctl dsjob list-job-status --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
+```
+![image](https://github.com/user-attachments/assets/69eb574a-6f2c-426f-a54a-b7a8df603230)
 
-
+This command list the status of the job using job id based on all job run with sort.
+```
+cpdctl dsjob list-job-status --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --sort --with-past-runs
+```
+![image](https://github.com/user-attachments/assets/30964d64-0acc-4537-abf0-50142b53bb13)
 
 
 
