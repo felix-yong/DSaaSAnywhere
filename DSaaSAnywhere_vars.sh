@@ -8,16 +8,20 @@
 ## salt=5334474DF6ECB3CC
 ## key=2A928E95489FCC163D46872040B9B24DC44E28A734B7681C8A3F0168F23E2A13
 ## iv =45990395FEB2B39C34B51D998E0E2E1B
+## -e "${ENCRYPTION_KEY}"
+## -i "${ENCRYPTION_IV}"
 export ENCRYPTION_KEY=<EncryptionKey>
 export ENCRYPTION_IV=<EncryptionIV>
 
 ## Your Project ID(s). This is the comma separated list of IDs of the projects for DSaaS Anywhere.
 ## When you create the remote engine, the remote engine will be available based on the Project ID(s) define.
-export PROJECT_ID=<ProjectID1>,<ProjectID2>,..
+## --project-id "${ProjectID},${PROJECT_ID2},.."
+export PROJECT_ID=<ProjectID>
 
 ## The IBM Cloud Container Registry API Key required to deploy the remote engine.
 ## This API key will be used to download the images needed to run Remote Engine for IBM Cloud.
 ## Currently, clients need to request this API Key once they have provisioned a DataStage-aaS Plan and it needs to be requested via IBM Cloud Support: https://cloud.ibm.com/unifiedsupport.
+## -p "${IBMCLOUD_CONTAINER_REGISTRY_APIKEY}"
 export IBMCLOUD_CONTAINER_REGISTRY_APIKEY=<IBMCloudContainerAPIKey>
 
 ## The IBM Cloud API Key is required for registering the remote engine to your DSaaS Anywhere project on IBM Cloud.
@@ -26,42 +30,51 @@ export IBMCLOUD_CONTAINER_REGISTRY_APIKEY=<IBMCloudContainerAPIKey>
 ## Ensure that My IBM Cloud API keys is selected in the View list.
 ## Click Create an IBM Cloud API key, and then specify a name and description.
 ## Note: Once you close this pop-up window, you will not be able to access the value of this API Key again.
+## -a "${IBMCLOUD_APIKEY}"
 export IBMCLOUD_APIKEY=<IBMCloudAPIKey>
 
 ## The remote engine name you define. This will need to be unqiue and you can have multiple engine within the same server as long as they have difference name.
+## -n ${UNIQUE_ENGINE_NAME}
 export UNIQUE_ENGINE_NAME=<UniqueEngineName>
 
 ## Sets the target IBM Cloud enviroment to either ypprod (Dallas data center - default), frprod (Frankfurt data center), sydprod (Sydney data center), or  torprod (Toronto data center). The project associated with this engine instance must be in same data center.
-## --home <value>: 
+## --home ${DATA_CENTER}: 
 export DATA_CENTER=sydprod
 
 ## Sets the maximum amount of memory the engine can use. The value takes a positive integer, followed by a suffix of m/M, g/G, to indicate megabytes or gigabytes. Default is 4G.
-## --memory <value>
-export MEMORY=16G
+## --memory ${DS_MEMORY}
+export DS_MEMORY=16G
 
 ## Sets the maximum amount of cpu resources the engine can use. The value takes a positive number. Default is 2 cores.
-## --cpus <value> 
-export CPUS=4
+## --cpus ${DS_CPUS} 
+export DS_CPUS=4
 
 ## Sets the directory to be used as the volume directory for persistent storage. Default location is where you run the dsengine.sh script. e.g. if you run it in /opt than it will be /opt/docker/volumes.
-## --volume-dir <value> 
-export VOLUME_DIR=/EnginePV/SYD-SYD10
+## --volume-dir ${VOLUME_DIR} 
+## export VOLUME_DIR=/EnginePV/SYD-SYD10
+export VOLUME_DIR=<path for the default PV>
 
 ## Set to true if you want to choose a specific version of remote engine. By default, this flag is set to false and the latest version is used.
-## --select-version
+## --select-version ${VERSION}
+## export VERSION=true
 export VERSION=<EngineVersion> 
 
 ## Specify folder you want to mount on the container. This flag can be specified multiple times.
-## --mount-dir "</path/to/local_dir:/path/on/container>"
---mount-dir "/opt/SYD-SYD10:/ds-storage/SYD-SYD10"
+## --mount-dir "${MOUNT_DIR}"
+## --mount-dir "/opt/SYD-SYD10:/ds-storage/SYD-SYD10"
+export MOUNT_DIR="</path/to/local_dir:/path/on/container>"
 
 ## Set to true if you want to remove the existing remote engine container. By default, this flag is set to false and if a stopped existing container is found, it is restarted or if a running existing container is found, the script is aborted.
 ## --force-renew: 
 ## --force-renew true
+## export FORCE_RENEW=true
 
 ## Semi-colon separated list of key=value pairs of environment variables to set (eg. key1=value1;key2=value2;key3=value3;...). Whitespaces are ignored.
-## --env-vars: 
+## --env-vars REMOTE_ENGINE_BATCH_SIZE=${REMOTE_ENGINE_BATCH_SIZE};APT_USE_REMOTE_APP=${APT_USE_REMOTE_APP};ENABLE_DS_METRICS=${ENABLE_DS_METRICS}
 ## Remote Engine specific environment variables:
 ## REMOTE_ENGINE_BATCH_SIZE - Set to an integer representing the maximum number of jobs that remote engine will pull at one time. Default value is 5.
 ## APT_USE_REMOTE_APP - Set to "force" to make remote engine avoid forking section leader processes. Can avoid inheriting unwanted open resources from the conductor. Default is unset.
 ## ENABLE_DS_METRICS - Set to "true" to have the remote engine send metrics to a configured DataStage metrics repository. See the IBM Cloud or Cloud Pak for Data documentation for more information.
+export REMOTE_ENGINE_BATCH_SIZE=10
+export APT_USE_REMOTE_APP=force
+export ENABLE_DS_METRICS=true
