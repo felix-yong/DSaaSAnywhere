@@ -102,5 +102,28 @@ How to access the project administration setting for Data Stage UI? \
 You can find it within the Project you click on -> Manage -> General -> DataStage in the screenshot below. In my example, I click on a project name DSaaS Anywhere. \
 ![image](https://github.com/user-attachments/assets/0f104565-1908-45b1-a2a6-e143aa4851c9)
 
+# Some examples on creating and cleanup engine
 
+All command in the examples here are based on variables in this file (DSaaSAnywhere_vars.sh). \
+Please make sure you change all the variables to values that is applicable to your environment. \
 
+To load or use the variables from the variables files.
+```
+bash ./DSaaSAnywhere_vars.sh
+Source ./DSaaSAnywhere_vars.sh
+```
+
+In this example, I created a remote engine using the variables ${ENGINE_SYD10} which is the UNIQUE_ENGINE_NAME in my variables file. I plane to create multiple engines with difference engine name so I define multiple Engine Name variables. I also set the memory of the docker pods to 16GB and 4 vCPU as per the variables file.
+```
+./dsengine.sh start -n "${ENGINE_SYD10}" \
+                    -a "${IBMCLOUD_APIKEY}" \
+                    -e "${ENCRYPTION_KEY}" \
+                    -i "${ENCRYPTION_IV}" \
+                    -p "${IBMCLOUD_CONTAINER_REGISTRY_APIKEY}" \
+                    --project-id "${PROJECT_PROD}" \
+                    --home ${DATA_CENTER} \
+                    --memory ${DS_MEMORY} \
+                    --cpus ${DS_CPUS} \
+                    --volume-dir ${VOLUME_DIR_SYD10} \
+                    --mount-dir "${MOUNT_DIR_SYD10}"
+```
