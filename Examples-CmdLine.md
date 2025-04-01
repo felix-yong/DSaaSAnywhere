@@ -91,6 +91,30 @@ cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8a
 The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/d637b3ef-41eb-4f51-98c5-aa27cc095397)
 
+This command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish.
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --wait -1
+```
+The screenshot didn't managed to capture all information provided.
+![image](https://github.com/user-attachments/assets/5c50c8f6-8ca4-4ac0-87bd-478373868415)
+![image](https://github.com/user-attachments/assets/784621f9-1df7-4a5e-a4b0-9dc82f18a6c1)
+
+This command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish and passing in a local parameter value.
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=10000000 --wait -1
+```
+The screenshot didn't managed to capture all information provided.
+![image](https://github.com/user-attachments/assets/0e347dde-636d-4c3e-bfdc-515d8d8c794d)
+![image](https://github.com/user-attachments/assets/f0c16dfe-ca06-4607-a4d3-9c714ea18e4a)
+
+
+
+
+
+
+
+
+
 
 
 
