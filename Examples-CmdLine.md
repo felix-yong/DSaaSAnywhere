@@ -41,31 +41,55 @@ cpdctl dsjob list-jobs --project "DSaaS Anywhere" --sort
 ![image](https://github.com/user-attachments/assets/c368f511-1771-470a-8a57-317de85db38d)
 
 
-This command get information about job using job id.
+This command get information about job using project id and job id.
 ```
 cpdctl dsjob get-job --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
 ```
 ![image](https://github.com/user-attachments/assets/73e55669-32e9-42ba-bee0-e50fc048c4d9)
 
-This command get information about job using job name.
+This command get information about job using project id and job name.
 ```
 cpdctl dsjob get-job --project-id ${PROJECT_PROD} --name "DSFlow.DataStage job"
 ```
 ![image](https://github.com/user-attachments/assets/d63ec230-49e7-4964-ba37-f0396f0bb3a1)
 
-This command list the status of the job using job id based on the last job run.
+This command list the status of the job using project id and job id for the last job run.
 ```
 cpdctl dsjob list-job-status --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
 ```
 ![image](https://github.com/user-attachments/assets/69eb574a-6f2c-426f-a54a-b7a8df603230)
 
-This command list the status of the job using job id based on all job run with sort.
+This command list the status of the job using project id and job id for all job run with sort.
 ```
 cpdctl dsjob list-job-status --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --sort --with-past-runs
 ```
 ![image](https://github.com/user-attachments/assets/30964d64-0acc-4537-abf0-50142b53bb13)
 
+This command provide basic job information using project id and job id.
+```
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
+```
+![image](https://github.com/user-attachments/assets/dfd3a5b7-8e36-4429-82d2-f813f4f693c2)
 
+This command provide full job information using project id and job id.
+```
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full
+```
+The screenshot didn't managed to capture all information provided.
+![image](https://github.com/user-attachments/assets/3eadfe8f-ad44-41e1-b9c4-8dfe077d4b70)
+
+This command project basic job information and parameters using project id and job id
+```
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --list-params
+```
+![image](https://github.com/user-attachments/assets/7decf01d-6cf2-45cd-97ea-b972632feff9)
+
+This command provide the most comprehensive job information and parameters using project id and job id.
+```
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full --list-params
+```
+The screenshot didn't managed to capture all information provided.
+![image](https://github.com/user-attachments/assets/d637b3ef-41eb-4f51-98c5-aa27cc095397)
 
 
 
