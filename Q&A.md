@@ -27,16 +27,18 @@ In the screenshot, we use the --volume-dir setting when we create the docker/pod
 ![image](https://github.com/user-attachments/assets/5f0e2175-7083-4d52-814e-d9d04494469b)
 
 What are the hostnames/URLs required for the remote engine setup? \
-The server allows outbound traffic to the following URLs: \
-1.	icr.io – Container repository \
-2.	iam.cloud.ibm.com – Authentication with IBM Cloud \
-3.	au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com – Control Plane for Sydney data center \
-4.	*.cloud-object-storage.appdomain.cloud \
+The server allows outbound traffic to the following URLs:
+1.	icr.io – Container repository
+2.	iam.cloud.ibm.com – Authentication with IBM Cloud
+3.	au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com – Control Plane for Sydney data center
+4.	*.cloud-object-storage.appdomain.cloud
 
 How to create HA to ensure better availability of jobs processing?
 HA for the Data Plane is built-in for deployment in K8s cluster. In term of docker/podman deployments, we need to consider the following –
 - We can attach multiple remote engines to a single project.
 - Each remote engine can run on difference server.
 - How can the scheduling tool use difference engine to start a job when the original job start run on the pre-defined engine failed?
-The above is just a simple consideration from remote engine HA perspective. There are other considerations in term of Sources/Targets locations that will impact performance when we fail-over to a difference server. See the example on command line which we can run the same job on multiple engines.
+
+The above is just a simple consideration from remote engine HA perspective. There are other considerations in term of Sources/Targets locations that will impact performance when we fail-over to a difference server. \
+See [Some examples on using command line cpdctl](Examples-CmdLine.md) section which we show how to run the same job on multiple engines.
 
