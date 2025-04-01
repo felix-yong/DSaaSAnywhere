@@ -1,4 +1,4 @@
-# Some examples of folder navigation between server and container for remote engine.
+# Some examples of persistent storage and folder handling/navigation between server and container for remote engine.
 
 How to find the Project folder in the server where the docker/podman is running? \
 `/<volume_dir>/ds-storage/PXRuntime/Projects/<ProjectID>`
