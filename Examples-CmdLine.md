@@ -16,11 +16,18 @@ cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} -
 
 `A status code is printed to the output. A status code of 0 indicates successful completion of the command.`
 
-This command list all projects in the DSaaS instance that you connect to.
+This command list all projects.
 ```
 cpdctl dsjob list-project
 ```
 ![image](https://github.com/user-attachments/assets/4549be43-2f84-42dc-b8de-73acfe6485cc)
+
+This command show all the environment information of the project.
+```
+cpdctl environment list --project-id ${PROJECT_PROD}
+```
+![image](https://github.com/user-attachments/assets/a2712fcd-4201-4936-980b-a4f1e60401dd)
+
 
 This command list all jobs in the project based on project id and sorted it alphabetically.
 ```
@@ -113,22 +120,21 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-8
 ```
 Issue the same command again to run the same job with a unique runtime env value.
 ```
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env Run2
+cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
 ```
-![image](https://github.com/user-attachments/assets/91c2c30f-b050-4e2e-a4d3-9b8123279401)
-![image](https://github.com/user-attachments/assets/b045bd14-d7e8-4fa2-8d6f-1648248fe1e9)
-![image](https://github.com/user-attachments/assets/ef9bd171-3513-4316-94ed-bf2e9e8097fd)
-![image](https://github.com/user-attachments/assets/9333ed96-79db-4a23-90d9-a47da641482e)
-
+![image](https://github.com/user-attachments/assets/3151b2e8-9969-48b5-b6d2-1f136edd8d9d)
+![image](https://github.com/user-attachments/assets/15e2d704-4c81-405f-926f-8b67c573b370)
+![image](https://github.com/user-attachments/assets/5c803d6f-6375-4c05-9bc0-5ca43772c916)
+![image](https://github.com/user-attachments/assets/0a3427c7-100a-4d83-97aa-35284f300d4e)
 
 This command will provide the job status when you didn't use the wait -1
 ```
-cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 1298281d-46c1-4365-be45-ba30ec267245
+cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 88ee3556-5127-40fc-bd9a-ce6801a7985f
 ```
 
 The screenshot didn't managed to capture all information provided.
 
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env 1db00dc7-7a71-4c2a-8ebc-0eb545d3cc5a
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env 
 
 
 
