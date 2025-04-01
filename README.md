@@ -57,9 +57,9 @@ How to find the job log folder in the container? \
 
 # [Some examples on creating and cleanup engine](Examples-Engine.md)
 
-# [Some examples on command line cpdctl](Examples-CmdLine.md)
+# [Some examples on using command line cpdctl](Examples-CmdLine.md)
 
-
+# [Some examples on using API](Examples-API.md)
 
 
 
