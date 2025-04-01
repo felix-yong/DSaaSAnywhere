@@ -1,6 +1,6 @@
 # DSaaSAnywhere
 
-This is a documentation related to DataStage as a Service Anywhere
+This is a documentation related to using DataStage as a Service Anywhere.
 
 # Information / Reference
 
