@@ -146,7 +146,13 @@ cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-908
 ```
 ![image](https://github.com/user-attachments/assets/8185b7f4-0642-4fd3-aedc-455c68dd522c)
 
-
+This command will provide the job logs informations.
+```
+cpdctl dsjob logdetail --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 45deb910-8ff5-4465-9848-8ca4ca189d1a
+```
+The screenshot didn't managed to capture all information provided.
+![image](https://github.com/user-attachments/assets/58cc7142-ea4a-4b6a-8876-0bef216ffb73)
+![image](https://github.com/user-attachments/assets/b7b8f3b9-ccb1-418d-9f62-72271d03a32c)
 
 
 
