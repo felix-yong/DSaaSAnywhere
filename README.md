@@ -4,7 +4,7 @@ This is a documentation related to using DataStage as a Service Anywhere.
 
 # Information / Reference
 
-Supported Kubernetes (K8s) Services (See this link for latest update) – (Info below is as of 20250328)
+Supported Kubernetes (K8s) Services (See this [link](https://github.com/IBM/DataStage/blob/main/RemoteEngine/docker/README.md) for latest update) – (Info below is as of 20250328)
 - OpenShift
 - IBM K8s Services (IKS)
 - Amazon Elastic K8s Services (EKS)
