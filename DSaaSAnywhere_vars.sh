@@ -78,3 +78,14 @@ export MOUNT_DIR="</path/to/local_dir:/path/on/container>"
 export REMOTE_ENGINE_BATCH_SIZE=10
 export APT_USE_REMOTE_APP=force
 export ENABLE_DS_METRICS=true
+
+## Parameter used for CPDCTL command line tool
+#!/bin/bash
+## Sydney Data Center
+export DSJOB_URL=https://au-syd.dai.cloud.ibm.com
+
+export CPDCTL_ENABLE_DSJOB=true
+cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} --watson-studio-url https://api.au-syd.dai.cloud.ibm.com
+
+
+
