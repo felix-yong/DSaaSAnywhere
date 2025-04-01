@@ -14,6 +14,12 @@ Setup the line profile using profile name `dsaas` based on Sydney Data Center. D
 cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} --watson-studio-url https://api.au-syd.dai.cloud.ibm.com
 ```
 
+When you run this to load the variables, the above are automatically handled.
+```
+bash ./DSaaSAnywhere_vars.sh
+Source ./DSaaSAnywhere_vars.sh
+```
+
 `A status code is printed to the output. A status code of 0 indicates successful completion of the command.`
 
 This command list all projects.
