@@ -16,11 +16,11 @@ How do we mount those folders we need from the server into the remote engine con
 In the screenshot, we use the --mount-dir setting when we create the docker/podman to define the folder within the server that we plan to mount onto the container. In the setting we also need to specify the path within the container that we want to use. \
 ![image](https://github.com/user-attachments/assets/6feff067-6ffd-428a-828f-4c1c15de3277)
 
-This also applicable to any NFS, SMB, COS, etc if you can mount it as a folder on the server. These are some examples from Google search – \
-•	Mounting an SMB Share on Linux - https://medium.com/@Josh_Rollins/mounting-an-smb-share-on-linux-57d6c2fb18e3 \
-•	Mounting NFS shares on RHEL 9 - https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_file_systems/mounting-nfs-shares_managing-file-systems \
-•	Mounting Amazon EFS on Linux - https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html \
-•	How to mount Azure Blob Storage as a file system on Linux - https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-how-to-deploy?tabs=RHEL \
+This also applicable to any NFS, SMB, COS, etc if you can mount it as a folder on the server. These are some examples from Google search –
+-	Mounting an SMB Share on Linux - https://medium.com/@Josh_Rollins/mounting-an-smb-share-on-linux-57d6c2fb18e3
+-	Mounting NFS shares on RHEL 9 - https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_file_systems/mounting-nfs-shares_managing-file-systems
+-	Mounting Amazon EFS on Linux - https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html
+-	How to mount Azure Blob Storage as a file system on Linux - https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-how-to-deploy?tabs=RHEL
 
 What are the persistent volumes created by the remote engine? \
 In the screenshot, we use the --volume-dir setting when we create the docker/podman to define the folder within the server as persistent storage for the remote engine. \
@@ -32,3 +32,11 @@ The server allows outbound traffic to the following URLs: \
 2.	iam.cloud.ibm.com – Authentication with IBM Cloud \
 3.	au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com – Control Plane for Sydney data center \
 4.	*.cloud-object-storage.appdomain.cloud \
+
+How to create HA to ensure better availability of jobs processing?
+HA for the Data Plane is built-in for deployment in K8s cluster. In term of docker/podman deployments, we need to consider the following –
+- We can attach multiple remote engines to a single project.
+- Each remote engine can run on difference server.
+- How can the scheduling tool use difference engine to start a job when the original job start run on the pre-defined engine failed?
+The above is just a simple consideration from remote engine HA perspective. There are other considerations in term of Sources/Targets locations that will impact performance when we fail-over to a difference server. See the example on command line which we can run the same job on multiple engines.
+
