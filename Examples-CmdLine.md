@@ -107,9 +107,28 @@ The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/0e347dde-636d-4c3e-bfdc-515d8d8c794d)
 ![image](https://github.com/user-attachments/assets/f0c16dfe-ca06-4607-a4d3-9c714ea18e4a)
 
+The DataStage NextGen support multi-instance jobs without requirements to enable it. In this example, I will show how it work.
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
+```
+Issue the same command again to run the same job with a unique runtime env value.
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env Run2
+```
+![image](https://github.com/user-attachments/assets/91c2c30f-b050-4e2e-a4d3-9b8123279401)
+![image](https://github.com/user-attachments/assets/b045bd14-d7e8-4fa2-8d6f-1648248fe1e9)
+![image](https://github.com/user-attachments/assets/ef9bd171-3513-4316-94ed-bf2e9e8097fd)
+![image](https://github.com/user-attachments/assets/9333ed96-79db-4a23-90d9-a47da641482e)
 
 
+This command will provide the job status when you didn't use the wait -1
+```
+cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 1298281d-46c1-4365-be45-ba30ec267245
+```
 
+The screenshot didn't managed to capture all information provided.
+
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env 1db00dc7-7a71-4c2a-8ebc-0eb545d3cc5a
 
 
 
