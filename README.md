@@ -42,7 +42,7 @@ Documentation link to DSaaS APIs – https://dataplatform.cloud.ibm.com/docs/con
 
 # [Some examples on using command line cpdctl](Examples-CmdLine.md)
 
-# [Some examples on using DataStageAPI](Examples-DSAPI.md)
+# [Some examples on using DataStage API](Examples-DSAPI.md)
 
 
 
