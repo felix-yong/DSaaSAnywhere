@@ -15,9 +15,17 @@ bash ./DSaaSAnywhere_vars.sh
 Source ./DSaaSAnywhere_vars.sh
 ```
 
+To get jobs from Project based on project id.
+```
+curl -X 'GET' \
+  "https://api.au-syd.dai.cloud.ibm.com/v2/jobs?project_id=${PROJECT_PROD}&limit=100&userfs=false" \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+```
+![image](https://github.com/user-attachments/assets/9b4d9c33-5a10-4473-9aee-01990173a15b)
 
 
-
+To get information of jobs based on project and job ids.
 
 
 
