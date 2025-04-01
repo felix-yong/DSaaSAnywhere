@@ -4,12 +4,12 @@ This is a documentation related to using DataStage as a Service Anywhere.
 
 # Information / Reference
 
-Supported Kubernetes (K8s) Services (See this [link](https://github.com/IBM/DataStage/blob/main/RemoteEngine/docker/README.md) for latest update) – (Info below is as of 20250328)
+Supported Kubernetes (K8s) Services (See this [link](https://github.com/IBM/DataStage/tree/main/RemoteEngine/kubernetes) for latest update) – (Info below is as of 20250328)
 - OpenShift
 - IBM K8s Services (IKS)
 - Amazon Elastic K8s Services (EKS)
 
-Supported OS (See this link for latest update) for docker/podman– (Info below is as of 20250328)
+Supported OS (See this [link](https://github.com/IBM/DataStage/tree/main/RemoteEngine/docker) for latest update) for docker/podman– (Info below is as of 20250328)
 - Red Hat Enterprise Linux (RHEL) 8.8, 8.10, 9.2 and 9.4
 -	Ubuntu 20.04, 22.04, 24.04
 
@@ -17,7 +17,7 @@ URL for SYD Data Center of CPDaaS/DSaaS – au-syd.dai.cloud.ibm.com and api.au-
 
 DSaaS Anywhere LI – https://www.ibm.com/support/customer/csol/terms/?id=i126-9243&lc=en
 
-SLA for IBM Cloud (See this link for latest update) – DSaaS is Tier 3 at 99.99% (Info is as of 20250328). The following are some pointers to read the link.
+SLA for IBM Cloud (See this [link](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en) for latest update) – DSaaS is Tier 3 at 99.99% (Info is as of 20250328). The following are some pointers to read the [link](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en).
 -	See Section 4 for the SLAs availability. 
 -	See Section 6 for the Supported SLA Tiers by service. DataStage is at pg 11 of 19. 
 
