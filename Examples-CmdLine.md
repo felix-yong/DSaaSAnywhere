@@ -74,33 +74,33 @@ cpdctl dsjob list-job-status --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-407
 
 This command provide basic job information using project id and job id.
 ```
-cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e
 ```
 ![image](https://github.com/user-attachments/assets/dfd3a5b7-8e36-4429-82d2-f813f4f693c2)
 
 This command provide full job information using project id and job id.
 ```
-cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full
 ```
 The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/3eadfe8f-ad44-41e1-b9c4-8dfe077d4b70)
 
 This command project basic job information and parameters using project id and job id
 ```
-cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --list-params
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --list-params
 ```
 ![image](https://github.com/user-attachments/assets/7decf01d-6cf2-45cd-97ea-b972632feff9)
 
 This command provide the most comprehensive job information and parameters using project id and job id.
 ```
-cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --job-id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full --list-params
+cpdctl dsjob jobinfo --project-id ${PROJECT_PROD} --id 0ce41049-b7a0-4073-8aa5-50dc8790da4e --full --list-params
 ```
 The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/d637b3ef-41eb-4f51-98c5-aa27cc095397)
 
 This command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish.
 ```
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --wait -1
+cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --wait -1
 ```
 The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/5c50c8f6-8ca4-4ac0-87bd-478373868415)
@@ -108,7 +108,7 @@ The screenshot didn't managed to capture all information provided.
 
 This command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish and passing in a local parameter value.
 ```
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=10000000 --wait -1
+cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=10000000 --wait -1
 ```
 The screenshot didn't managed to capture all information provided.
 ![image](https://github.com/user-attachments/assets/0e347dde-636d-4c3e-bfdc-515d8d8c794d)
@@ -116,7 +116,7 @@ The screenshot didn't managed to capture all information provided.
 
 The DataStage NextGen support multi-instance jobs without requirements to enable it. In this example, I will show how it work.
 ```
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
+cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
 ```
 Issue the same command again to run the same job with a unique runtime env value.
 ```
@@ -127,16 +127,24 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee
 ![image](https://github.com/user-attachments/assets/5c803d6f-6375-4c05-9bc0-5ca43772c916)
 ![image](https://github.com/user-attachments/assets/0a3427c7-100a-4d83-97aa-35284f300d4e)
 
+This is another example of running multi-instance of the same job but using 2 difference engine
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
+```
+Issue the same command again to run the same job with a difference engine name in runtime env value
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env remote_engine_ibmcloud_SYD-SYD11
+```
+![image](https://github.com/user-attachments/assets/ddf160f9-3f26-4983-9ba5-d3a5f755ff90)
+![image](https://github.com/user-attachments/assets/2bcc511d-4a21-4a09-a7a9-b037f5f087a9)
+![image](https://github.com/user-attachments/assets/bb87a6d7-499c-447c-88fa-d40d6dba763c)
+![image](https://github.com/user-attachments/assets/cc0176f7-903b-4e52-b67f-18c6fdf144c5)
+
 This command will provide the job status when you didn't use the wait -1
 ```
-cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 88ee3556-5127-40fc-bd9a-ce6801a7985f
+cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 45deb910-8ff5-4465-9848-8ca4ca189d1a
 ```
-
-The screenshot didn't managed to capture all information provided.
-
-cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000 --runtime-env 
-
-
+![image](https://github.com/user-attachments/assets/8185b7f4-0642-4fd3-aedc-455c68dd522c)
 
 
 
