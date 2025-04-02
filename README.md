@@ -31,6 +31,7 @@ Documentation link to security for DSaaS Anywhere remote engines – https://dat
 Documentation link on sharing the remote engines across projects – https://dataplatform.cloud.ibm.com/docs/content/dstage/dsnav/topics/sharing_remote_engine.html?context=cpdaas&audience=wdp \
 Documentation link to DSaaS command-line tools – https://dataplatform.cloud.ibm.com/docs/content/dstage/dsnav/topics/cli.html?context=cpdaas&audience=wdp \
 Documentation link to DSaaS APIs – https://dataplatform.cloud.ibm.com/docs/content/dstage/dsnav/topics/ds-apis.html?context=cpdaas&audience=wdp
+Documentation link to manage IBM Cloud API Keys - https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui
 
 # [Questions and Answers](Q&A.md)
 
