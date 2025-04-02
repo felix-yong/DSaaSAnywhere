@@ -3,6 +3,7 @@
 All command in the examples here are based on variables in this file (DSaaSAnywhere_vars.sh). \
 Please make sure you change all the variables to values that is applicable to your environment. \
 Command reference can be find in this link - https://github.com/IBM/DataStage/blob/main/dsjob/Readme.md \
+Install and configure `cptctl` tool is available in this link - https://github.com/IBM/cpdctl/blob/master/README.md \
 Example used here is based on 5.1.1 and the Data Center Information are below -
 - Dallas: dataplatform.cloud.ibm.com and api.dataplatform.cloud.ibm.com
 - Frankfurt: eu-de.dataplatform.cloud.ibm.com and api.dataplatform.cloud.ibm.com
