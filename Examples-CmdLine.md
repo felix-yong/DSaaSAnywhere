@@ -10,7 +10,7 @@ Example used here is based on 5.1.1 and the Data Center Information are below -
 - Sydney: au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com
 - Toronto: ca-tor.dai.cloud.ibm.com and api.ca-tor.dai.cloud.ibm.com
 
-### When you run this to load the variables, the above are automatically handled.
+### When you run this to load the variables, it will run the setup profile below
 ```
 bash ./DSaaSAnywhere_vars.sh
 Source ./DSaaSAnywhere_vars.sh
