@@ -4,7 +4,7 @@ This is a documentation related to using DataStage as a Service Anywhere.
 
 ## Information / Reference
 
-**DataStage Architecture**
+### DataStage Architecture
 <img width="1085" alt="image" src="https://github.com/user-attachments/assets/757e5393-a0f4-4910-94b5-f8a5b301f884" />
 
 **Supported Kubernetes (K8s) Services (See this [link](https://github.com/IBM/DataStage/tree/main/RemoteEngine/kubernetes) for latest update) –** (Info below is as of 20250328)
