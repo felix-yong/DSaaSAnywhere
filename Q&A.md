@@ -48,7 +48,7 @@ See [Some examples on using command line cpdctl](Examples-CmdLine.md) section wh
 
 ### Q10, does continuous allow-listing of specific (external internet) domains, ports or services occur in the DSaaS service?
 
-### Q11, does the job automatically restart when the pods crash and restart in K8s environment?
+### Q11, does the job automatically restart in K8s environment when the pods crash and restart?
 This setting APT_CHECKPOINT_RESTART will automatically restarted failed jobs due to DataStage like compute pods crash and restart. \
 For runtime pod failure, automatically restart failed job will not work. \
 For docker/podman, both runtime and compute are in the same pod; automatically restart failed jobs will not work. \
