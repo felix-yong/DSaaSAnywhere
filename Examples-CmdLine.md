@@ -10,15 +10,20 @@ Example used here is based on 5.1.1 and the Data Center Information are below -
 - Sydney: au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com
 - Toronto: ca-tor.dai.cloud.ibm.com and api.ca-tor.dai.cloud.ibm.com
 
+### When you run this to load the variables, the above are automatically handled.
+```
+bash ./DSaaSAnywhere_vars.sh
+Source ./DSaaSAnywhere_vars.sh
+```
+
 ### Setup the line profile using profile name `dsaas` based on Sydney Data Center. Data Center Information
 ```
 cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} --watson-studio-url https://api.au-syd.dai.cloud.ibm.com
 ```
 
-### When you run this to load the variables, the above are automatically handled.
+### To switch to the right profile like using the profile create above
 ```
-bash ./DSaaSAnywhere_vars.sh
-Source ./DSaaSAnywhere_vars.sh
+cpdctl config profile use dsaas
 ```
 
 `A status code is printed to the output. A status code of 0 indicates successful completion of the command.`
