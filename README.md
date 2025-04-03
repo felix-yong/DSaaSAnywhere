@@ -1,4 +1,4 @@
-# DSaaSAnywhere
+# DSaaS Anywhere
 
 This is a documentation related to using DataStage as a Service Anywhere.
 
