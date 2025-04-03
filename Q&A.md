@@ -42,3 +42,8 @@ HA for the Data Plane is built-in for deployment in K8s cluster. In term of dock
 The above is just a simple consideration from remote engine HA perspective. There are other considerations in term of Sources/Targets locations that will impact performance when we fail-over to a difference server. \
 See [Some examples on using command line cpdctl](Examples-CmdLine.md) section which we show how to run the same job on multiple engines.
 
+In the DSaaS service, does IBM hold any (hidden) service accounts that would be unknown to customer security personnel?
+
+Does the IBM SaaS team hold any escalated operator privileges that would be unknown to customer security personnel?
+
+Does continuous allow-listing of specific (external internet) domains, ports or services occur in the DSaaS service?
