@@ -47,3 +47,13 @@ See [Some examples on using command line cpdctl](Examples-CmdLine.md) section wh
 ### Q09, does the IBM SaaS team hold any escalated operator privileges that would be unknown to customer security personnel?
 
 ### Q10, does continuous allow-listing of specific (external internet) domains, ports or services occur in the DSaaS service?
+
+### Q11, does the job automatically restart when the pods crash and restart in K8s environment?
+This setting APT_CHECKPOINT_RESTART will automatically restarted failed jobs due to DataStage like compute pods crash and restart. \
+For failure due to the runtime pods. For more information see this [link](https://dataplatform.cloud.ibm.com/docs/content/dstage/com.ibm.swg.im.iis.ds.parjob.adref.doc/topics/checkpoint.html?context=cpdaas&locale=en&audience=wdp). \
+For docker/podman, both runtime and compute are in the same pod. Automatically restart failed jobs will not work.
+
+
+
+
+
