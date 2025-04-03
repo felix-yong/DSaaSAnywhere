@@ -16,7 +16,12 @@ bash ./DSaaSAnywhere_vars.sh
 Source ./DSaaSAnywhere_vars.sh
 ```
 
-### Setup the line profile using profile name `dsaas` based on Sydney Data Center. Data Center Information
+### To enable dsjob in cpdctl
+```
+export CPDCTL_ENABLE_DSJOB=true
+```
+
+### Setup the cpdctl profile using profile name `dsaas` based on Sydney Data Center. Data Center Information
 ```
 cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} --watson-studio-url https://api.au-syd.dai.cloud.ibm.com
 ```
