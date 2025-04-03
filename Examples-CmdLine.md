@@ -23,20 +23,20 @@ Source ./DSaaSAnywhere_vars.sh
 
 `A status code is printed to the output. A status code of 0 indicates successful completion of the command.`
 
-### This command list all projects.
+### Example 1, This command list all projects.
 ```
 cpdctl dsjob list-project
 ```
 ![image](https://github.com/user-attachments/assets/4549be43-2f84-42dc-b8de-73acfe6485cc)
 
-### This command show all the environment information of the project.
+### Example 2, This command show all the environment information of the project.
 ```
 cpdctl environment list --project-id ${PROJECT_PROD}
 ```
 ![image](https://github.com/user-attachments/assets/a2712fcd-4201-4936-980b-a4f1e60401dd)
 
 
-### This command list all jobs in the project based on project id and sorted it alphabetically.
+### Example 3, This command list all jobs in the project based on project id and sorted it alphabetically.
 ```
 cpdctl dsjob list-jobs --project-id ${PROJECT_PROD} --sort
 ```
