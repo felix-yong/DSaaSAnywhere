@@ -26,7 +26,7 @@ export CPDCTL_ENABLE_DSJOB=true
 cpdctl config profile set dsaas --url ${DSJOB_URL} --apikey ${IBMCLOUD_APIKEY} --watson-studio-url https://api.au-syd.dai.cloud.ibm.com
 ```
 
-### To switch to the right profile like using the profile create above
+### To use certain profile as the current profile, for example to use the profile create above
 ```
 cpdctl config profile use dsaas
 ```
