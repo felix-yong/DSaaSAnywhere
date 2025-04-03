@@ -50,8 +50,9 @@ See [Some examples on using command line cpdctl](Examples-CmdLine.md) section wh
 
 ### Q11, does the job automatically restart when the pods crash and restart in K8s environment?
 This setting APT_CHECKPOINT_RESTART will automatically restarted failed jobs due to DataStage like compute pods crash and restart. \
-For failure due to the runtime pods. For more information see this [link](https://dataplatform.cloud.ibm.com/docs/content/dstage/com.ibm.swg.im.iis.ds.parjob.adref.doc/topics/checkpoint.html?context=cpdaas&locale=en&audience=wdp). \
-For docker/podman, both runtime and compute are in the same pod. Automatically restart failed jobs will not work.
+For runtime pod failure, automatically restart failed job will not work. \
+For docker/podman, both runtime and compute are in the same pod; automatically restart failed jobs will not work. \
+For more information about APT_CHECKPOINT_RESTART, see this [link](https://dataplatform.cloud.ibm.com/docs/content/dstage/com.ibm.swg.im.iis.ds.parjob.adref.doc/topics/checkpoint.html?context=cpdaas&locale=en&audience=wdp).
 
 
 
