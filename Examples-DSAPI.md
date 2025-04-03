@@ -15,7 +15,7 @@ bash ./DSaaSAnywhere_vars.sh
 Source ./DSaaSAnywhere_vars.sh
 ```
 
-### To get jobs from Project based on project id.
+### Example 01, to get jobs from Project based on project id.
 ```
 curl -X 'GET' \
   "https://api.au-syd.dai.cloud.ibm.com/v2/jobs?project_id=${PROJECT_PROD}&limit=100&userfs=false" \
@@ -24,7 +24,7 @@ curl -X 'GET' \
 ```
 ![image](https://github.com/user-attachments/assets/9b4d9c33-5a10-4473-9aee-01990173a15b)
 
-### To get information of job based on project and job ids.
+### Example 02, to get information of job based on project and job ids.
 ```
 curl -X 'GET' \
   "https://api.au-syd.dai.cloud.ibm.com/v2/jobs/0327d1a3-a2a1-46a4-9087-862ee34cd239?project_id=${PROJECT_PROD}&userfs=false" \
@@ -33,7 +33,7 @@ curl -X 'GET' \
 ```
 ![image](https://github.com/user-attachments/assets/3fa97719-4458-41e5-89e0-c8bdf3f3f2fe)
 
-### To get job run information of job based on project and job ids.
+### Example 03, to get job run information of job based on project and job ids.
 ```
 curl -X 'GET' \
   "https://api.au-syd.dai.cloud.ibm.com/v2/jobs/0327d1a3-a2a1-46a4-9087-862ee34cd239/runs?project_id=${PROJECT_PROD}&limit=100&userfs=false" \
