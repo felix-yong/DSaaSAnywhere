@@ -17,7 +17,7 @@ Source ./DSaaSAnywhere_vars.sh
 ```
 
 ### Setup the cpdctl to run DataStage in those example
-***To enable dsjob in cpdctl***
+***To enable dsjob in cpdctl. You can add this to .bash_profile so that it will be loaded whenever you login***
 ```
 export CPDCTL_ENABLE_DSJOB=true
 ```
@@ -36,7 +36,7 @@ cpdctl config profile use dsaas
 
 ### Example 01, this command list all projects.
 ```
-cpdctl dsjob list-project
+cpdctl dsjob list-projects
 ```
 ![image](https://github.com/user-attachments/assets/4549be43-2f84-42dc-b8de-73acfe6485cc)
 
