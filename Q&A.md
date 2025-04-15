@@ -45,8 +45,10 @@ See [Some examples on using command line cpdctl](Examples-CmdLine.md) section wh
 ### Q08, in the DSaaS service, does IBM hold any (hidden) service accounts that would be unknown to customer security personnel?
 
 ### Q09, does the IBM SaaS team hold any escalated operator privileges that would be unknown to customer security personnel?
+No.
 
 ### Q10, does continuous allow-listing of specific (external internet) domains, ports or services occur in the DSaaS service?
+No.
 
 ### Q11, does the job automatically restart in K8s environment when the pods crash and restart?
 This setting APT_CHECKPOINT_RESTART will automatically restarted failed jobs due to DataStage like compute pods crash and restart. \
@@ -54,7 +56,8 @@ For runtime pod failure, automatically restart failed job will not work. \
 For docker/podman, both runtime and compute are in the same pod; automatically restart failed jobs will not work. \
 For more information about APT_CHECKPOINT_RESTART, see this [link](https://dataplatform.cloud.ibm.com/docs/content/dstage/com.ibm.swg.im.iis.ds.parjob.adref.doc/topics/checkpoint.html?context=cpdaas&locale=en&audience=wdp).
 
-
+### Q12, is DSaaS Anywhere instance single tenant or multi tenant?
+The control plane/design time portion is essentially just regular DataStage as a Service, meaning it is multi-tenant, however the data plane/runtime portion where the actual data execution occurs is single-tenant as the remote engines are hosted within the customer's own environment and running on the customer's own infrastructure.
 
 
 
