@@ -59,5 +59,17 @@ For more information about APT_CHECKPOINT_RESTART, see this [link](https://datap
 ### Q12, is DSaaS Anywhere instance single tenant or multi tenant?
 The control plane/design time portion is essentially just regular DataStage as a Service, meaning it is multi-tenant, however the data plane/runtime portion where the actual data execution occurs is single-tenant as the remote engines are hosted within the customer's own environment and running on the customer's own infrastructure.
 
-
+### Q13, where can I find the logs?
+***Container-level logs*** \
+Location: Stored under /var/lib/containers/storage/overlay/... on the host. \
+Purpose: Captures minimal container-level output (stdout/stderr) and can be accessed using podman logs <container-name>. (this is often empty or non-critical) \
+***Primary Remote Engine logs*** \
+Initial Location: Typically written to /logs directory on the container and bind-mounted to /var/lib/containers/storage/overlay/... on the host (by default). \
+Archived Location: Older logs are rotated and archived as ZIP files under /ds-storage/service_log_archive in the container, which is bind-mounted to <volume-dir>/ds-storage/service_log_archive on the host. \
+Purpose: \
+trace.log – Active detailed trace log of Remote Engine runtime (job interactions, service calls). \
+messages.log – Higher-level system logs (job polling activity, engine heartbeats, etc.). \
+***Workload Management (WLM) logs*** \
+Location: Stored in /px-storage/PXRuntime/WLM/logs/ inside the container, bind-mounted to <volume-dir>/px-storage/PXRuntime/WLM/logs on the host. \
+Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
 
