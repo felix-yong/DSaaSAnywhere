@@ -72,4 +72,6 @@ messages.log – Higher-level system logs (job polling activity, engine heartbea
 ***Workload Management (WLM) logs*** \
 Location: Stored in /px-storage/PXRuntime/WLM/logs/ inside the container, bind-mounted to <volume-dir>/px-storage/PXRuntime/WLM/logs on the host. \
 Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
+### Q14, how is sentitive data protected by not sending data to the control plane?
+To avoid writing data to logs, avoid using the Peek Stage or the Asset Browser functions. Instead, use sequential files to analyze the actual data and data types that are used in the job design and to parametrize all file names and connections. Please note sequential file is generated at the Data Plane ONLY (Log of Sequential File will still be in Control Plane) while all the other components stated above will be sent to the Control Plane. In some cases where data may be still showned in logs (for example, you can see the data when you get a warning for records like trying to write char data into int which is a metadata mismatch), we need a way to disable “Log” showing in Control Plane. 
 
