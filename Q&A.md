@@ -60,18 +60,25 @@ For more information about APT_CHECKPOINT_RESTART, see this [link](https://datap
 The control plane/design time portion is essentially just regular DataStage as a Service, meaning it is multi-tenant, however the data plane/runtime portion where the actual data execution occurs is single-tenant as the remote engines are hosted within the customer's own environment and running on the customer's own infrastructure.
 
 ### Q13, where can I find the logs?
-***Container-level logs*** \
-Location: Stored under /var/lib/containers/storage/overlay/... on the host. \
-Purpose: Captures minimal container-level output (stdout/stderr) and can be accessed using podman logs <container-name>. (this is often empty or non-critical) \
-***Primary Remote Engine logs*** \
-Initial Location: Typically written to /logs directory on the container and bind-mounted to /var/lib/containers/storage/overlay/... on the host (by default). \
-Archived Location: Older logs are rotated and archived as ZIP files under /ds-storage/service_log_archive in the container, which is bind-mounted to <volume-dir>/ds-storage/service_log_archive on the host. \
-Purpose: \
-trace.log – Active detailed trace log of Remote Engine runtime (job interactions, service calls). \
-messages.log – Higher-level system logs (job polling activity, engine heartbeats, etc.). \
-***Workload Management (WLM) logs*** \
-Location: Stored in /px-storage/PXRuntime/WLM/logs/ inside the container, bind-mounted to <volume-dir>/px-storage/PXRuntime/WLM/logs on the host. \
-Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
+***Container-level logs***
+- Location: Stored under /var/lib/containers/storage/overlay/... on the host.
+- Purpose: Captures minimal container-level output (stdout/stderr) and can be accessed using podman logs <container-name>. (this is often empty or non-critical)
+
+***Primary Remote Engine logs***
+- Initial Location: Typically written to /logs directory on the container and bind-mounted to /var/lib/containers/storage/overlay/... on the host (by default).
+- Archived Location: Older logs are rotated and archived as ZIP files under /ds-storage/service_log_archive in the container, which is bind-mounted to <volume-dir>/ds-storage/service_log_archive on the host.
+- Purpose:
+  * trace.log – Active detailed trace log of Remote Engine runtime (job interactions, service calls).
+  * messages.log – Higher-level system logs (job polling activity, engine heartbeats, etc.). 
+
+***Workload Management (WLM) logs***
+- Location: Stored in /px-storage/PXRuntime/WLM/logs/ inside the container, bind-mounted to <volume-dir>/px-storage/PXRuntime/WLM/logs on the host.
+- Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
+
+***Extracting Service Logs as Archive to Local Machine***
+- Location: Stored in /px-storage/PXRuntime/WLM/logs/ inside the container, bind-mounted to /px-storage/PXRuntime/WLM/logs on the host.
+- Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
+
 ### Q14, how is sentitive data protected by not sending data to the control plane?
 To avoid writing data to logs, avoid using the Peek Stage or the Asset Browser functions. Instead, use sequential files to analyze the actual data and data types that are used in the job design and to parametrize all file names and connections. Please note sequential file is generated at the Data Plane ONLY (Log of Sequential File will still be in Control Plane) while all the other components stated above will be sent to the Control Plane. In some cases where data may be still showned in logs (for example, you can see the data when you get a warning for records like trying to write char data into int which is a metadata mismatch), we need a way to disable “Log” showing in Control Plane. 
 
