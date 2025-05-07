@@ -80,7 +80,7 @@ The control plane/design time portion is essentially just regular DataStage as a
 - Purpose: Captures CPU and memory usage metrics, job scheduling events, and system resource distribution among running DataStage pods.
 
 ### Q14, how is sentitive data protected by not sending data to the control plane?
-Metadata, ID, Password, logs, etc are stored in Control Plane. For Preview of data, sample data will be transferred from Data Plane to Control Plane via SSL in memory not stored in Control Plane.
+Metadata, ID, Password, logs, etc are stored in Control Plane. For Preview of data, sample data will be transferred from Data Plane to Control Plane via TLS 1.2 in memory not stored in Control Plane.
 
 To avoid writing data to logs, avoid using the Peek Stage or the Asset Browser functions. Instead, use sequential files to analyze the actual data and data types that are used in the job design and to parametrize all file names and connections. Please note sequential file is generated at the Data Plane ONLY (Log of Sequential File will still be in Control Plane) while all the other components stated above will be sent to the Control Plane.
 
