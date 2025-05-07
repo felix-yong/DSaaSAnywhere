@@ -6,6 +6,7 @@ This is a documentation related to using DataStage as a Service Anywhere.
 
 ### DataStage Architecture
 <img width="1088" alt="image" src="https://github.com/user-attachments/assets/83b07c96-74a8-4b82-a2b4-2078f2d62c26" />
+<img width="1023" alt="image" src="https://github.com/user-attachments/assets/571eafc7-d9e5-4f78-84f8-f3717714aad2" />
 
 **Supported Kubernetes (K8s) Services (See this [link](https://github.com/IBM/DataStage/tree/main/RemoteEngine/kubernetes) for latest update) –** (Info below is as of 20250328)
 - OpenShift
