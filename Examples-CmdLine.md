@@ -61,7 +61,7 @@ cpdctl dsjob list-jobs --project-id ${PROJECT_PROD} --sort --with-id
 
 ### Example 05, this command list all jobs in the project based on project name and sorted it alphabetically.
 ```
-cpdctl dsjob list-jobs --project "DSaaS Anywhere" --sort
+cpdctl dsjob list-jobs --project "DSaaSAnywhere" --sort
 ```
 ![image](https://github.com/user-attachments/assets/c368f511-1771-470a-8a57-317de85db38d)
 
