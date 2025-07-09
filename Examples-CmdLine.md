@@ -172,10 +172,26 @@ cpdctl dsjob logdetail --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087
 ![image](https://github.com/user-attachments/assets/58cc7142-ea4a-4b6a-8876-0bef216ffb73)
 ![image](https://github.com/user-attachments/assets/b7b8f3b9-ccb1-418d-9f62-72271d03a32c)
 
-### Example 20, this command will list all the DataStage runtime environment information for the specific project.
+### Example 20, this command will list all the DataStage runtime environment information for the specified project.
 ```
 cpdctl dsjob list-envs --project-id ${PROJECT_PROD} --types datastage --full --sort --with-id
 ```
 ![image](https://github.com/user-attachments/assets/d426a0e0-a03b-4156-bf78-affc217afc5a)
 
+### Example 21, this command get the specified DataStage runtime environment information for the specified project.
+```
+cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output json --with-metadata
+```
+![image](https://github.com/user-attachments/assets/9b3a9065-5f41-4f4c-b315-32a7a87e4535)
+
+### Example 22, this command generate a file for the specified DataStage runtime environment information for the specified project.
+```
+cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output file  --file-name datastage-ocp02.json --with-metadata
+```
+![image](https://github.com/user-attachments/assets/0597028a-8e2b-4ac2-8f8c-80d9011a13c4)
+
+### Example 23, this command leverage the file generated from Example 22 to create a DataStage runtime environment in another project.
+```
+cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output file  --file-name datastage-ocp02.json --with-metadata
+```
 
