@@ -10,7 +10,7 @@ Example used here is based on 5.1.1 and the Data Center Information are below -
 - Sydney: au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com
 - Toronto: ca-tor.dai.cloud.ibm.com and api.ca-tor.dai.cloud.ibm.com
 
-## In the examples, I did use hardcode info like ProjectID, JobID, etc which is based on my environment. Please make sure you change it to cater for your environment.
+## _In the examples, I did use hardcode info like ProjectID, JobID, etc which is based on my environment. Please make sure you change it to cater for your environment._
 
 ### When you run this to load the variables, it will run the setup profile below
 ```
