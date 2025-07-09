@@ -192,6 +192,6 @@ cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-d
 
 ### Example 23, this command leverage the file generated from Example 22 to create a DataStage runtime environment in another project.
 ```
-cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output file  --file-name datastage-ocp02.json --with-metadata
+cpdctl dsjob create-env --project-id ${PROJECT_DEV} --file-name datastage-ocp02.json
 ```
 
