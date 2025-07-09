@@ -124,7 +124,15 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee
 ![image](https://github.com/user-attachments/assets/5c50c8f6-8ca4-4ac0-87bd-478373868415)
 ![image](https://github.com/user-attachments/assets/784621f9-1df7-4a5e-a4b0-9dc82f18a6c1)
 
-### Example 15, this command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish and passing in a local parameter value.
+### Example 15, this command will run a job based on project id, job id and using engine specifed. The setting of wait -1 will wait for the job to finish.
+```
+cpdctl dsjob run --project-id ${PROJECT_PROD} --id 53df39c5-45e5-410a-9686-a7beaeaa6d34 --runtime-env datastage-ocp02 --wait -1
+```
+***The screenshot didn't managed to capture all information provided.***
+![image](https://github.com/user-attachments/assets/5d028bbe-58c6-4fee-ad29-8e67a37cb3c1)
+![image](https://github.com/user-attachments/assets/cbb24ac9-2132-4540-bd1b-24fceb53a84c)
+
+### Example 16, this command will run a job based on project id, job id and using default engine. The setting of wait -1 will wait for the job to finish and passing in a local parameter value.
 ```
 cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=10000000 --wait -1
 ```
@@ -132,7 +140,7 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee
 ![image](https://github.com/user-attachments/assets/0e347dde-636d-4c3e-bfdc-515d8d8c794d)
 ![image](https://github.com/user-attachments/assets/f0c16dfe-ca06-4607-a4d3-9c714ea18e4a)
 
-### Example 16, the DataStage NextGen support multi-instance jobs without requirements to enable it. In this example, I will show how it work.
+### Example 17, the DataStage NextGen support multi-instance jobs without requirements to enable it. In this example, I will show how it work.
 ```
 cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
 ```
@@ -145,7 +153,7 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee
 ![image](https://github.com/user-attachments/assets/5c803d6f-6375-4c05-9bc0-5ca43772c916)
 ![image](https://github.com/user-attachments/assets/0a3427c7-100a-4d83-97aa-35284f300d4e)
 
-### Example 17, this is another example of running multi-instance of the same job but using 2 difference engine
+### Example 18, this is another example of running multi-instance of the same job but using 2 difference engine
 ```
 cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --param RowsGen=1000000000
 ```
@@ -158,13 +166,13 @@ cpdctl dsjob run --project-id ${PROJECT_PROD} --job-id 0327d1a3-a2a1-46a4-9087-8
 ![image](https://github.com/user-attachments/assets/bb87a6d7-499c-447c-88fa-d40d6dba763c)
 ![image](https://github.com/user-attachments/assets/cc0176f7-903b-4e52-b67f-18c6fdf144c5)
 
-### Example 18, this command will provide the job status when you didn't use the wait -1
+### Example 19, this command will provide the job status when you didn't use the wait -1
 ```
 cpdctl dsjob waitforjob --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 45deb910-8ff5-4465-9848-8ca4ca189d1a
 ```
 ![image](https://github.com/user-attachments/assets/8185b7f4-0642-4fd3-aedc-455c68dd522c)
 
-### Example 19, this command will provide the job logs information.
+### Example 20, this command will provide the job logs information.
 ```
 cpdctl dsjob logdetail --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087-862ee34cd239 --run-id 45deb910-8ff5-4465-9848-8ca4ca189d1a
 ```
@@ -172,25 +180,25 @@ cpdctl dsjob logdetail --project-id ${PROJECT_PROD} --id 0327d1a3-a2a1-46a4-9087
 ![image](https://github.com/user-attachments/assets/58cc7142-ea4a-4b6a-8876-0bef216ffb73)
 ![image](https://github.com/user-attachments/assets/b7b8f3b9-ccb1-418d-9f62-72271d03a32c)
 
-### Example 20, this command will list all the DataStage runtime environment information for the specified project.
+### Example 21, this command will list all the DataStage runtime environment information for the specified project.
 ```
 cpdctl dsjob list-envs --project-id ${PROJECT_PROD} --types datastage --full --sort --with-id
 ```
 ![image](https://github.com/user-attachments/assets/d426a0e0-a03b-4156-bf78-affc217afc5a)
 
-### Example 21, this command get the specified DataStage runtime environment information for the specified project.
+### Example 22, this command get the specified DataStage runtime environment information for the specified project.
 ```
 cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output json --with-metadata
 ```
 ![image](https://github.com/user-attachments/assets/9b3a9065-5f41-4f4c-b315-32a7a87e4535)
 
-### Example 22, this command generate a file for the specified DataStage runtime environment information for the specified project.
+### Example 23, this command generate a file for the specified DataStage runtime environment information for the specified project.
 ```
 cpdctl dsjob get-env --project-id ${PROJECT_PROD} --id 9277bc28-b898-4a4e-9e24-da02e6123582 --output file  --file-name datastage-ocp02.json --with-metadata
 ```
 ![image](https://github.com/user-attachments/assets/0597028a-8e2b-4ac2-8f8c-80d9011a13c4)
 
-### Example 23, this command leverage the file generated from Example 22 to create a DataStage runtime environment in another project.
+### Example 24, this command leverage the file generated from Example 22 to create a DataStage runtime environment in another project.
 ```
 cpdctl dsjob create-env --project-id ${PROJECT_DEV} --file-name datastage-ocp02.json
 ```
