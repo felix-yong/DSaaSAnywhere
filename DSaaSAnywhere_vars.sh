@@ -4,6 +4,7 @@
 yum update -y
 yum -y install podman docker tmux tar
 
+## Get the latest cpdctl client
 platform=$(uname -s | tr '[A-Z]' '[a-z]')
 arch=$(uname -m | sed 's/x86_64/amd64/')
 curl -LOs "https://github.com/IBM/cpdctl/releases/latest/download/cpdctl_${platform}_${arch}.tar.gz"
