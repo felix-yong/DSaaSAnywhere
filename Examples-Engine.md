@@ -1,4 +1,4 @@
-# Some examples on creating and cleanup engine
+# Some examples on create, cleanup and restart engine
 
 All command in the examples here are based on variables in this file (DSaaSAnywhere_vars.sh). \
 Please make sure you change all the variables to values that is applicable to your environment. \
