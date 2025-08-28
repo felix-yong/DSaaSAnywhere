@@ -128,3 +128,28 @@ Source ./DSaaSAnywhere_vars.sh
                       --project-id "${PROJECT_PROD},${PROJECT_DEV}" \
                       --home ${DATA_CENTER}
 ```
+
+### Example 07, to restart the server in docker/podman when it is shown as offline in the UI.
+
+- To find the container ID
+
+```
+podman ps
+```
+
+<img width="1274" height="191" alt="image" src="https://github.com/user-attachments/assets/fe6c89e0-1e49-4001-8f56-e6ccc5d3782d" />
+
+- To access the conntainer based on container ID
+
+```
+podman exec -it <ContainerID> bash
+```
+
+- To stop and start the server
+
+```
+server stop defaultServer; server start defaultServer
+```
+
+<img width="705" height="238" alt="image" src="https://github.com/user-attachments/assets/88aaee13-f0af-456b-8851-05a44fa942db" />
+
