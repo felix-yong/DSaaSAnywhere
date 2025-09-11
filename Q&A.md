@@ -56,7 +56,7 @@ For runtime pod failure, automatically restart failed job will not work. \
 For docker/podman, both runtime and compute are in the same pod; automatically restart failed jobs will not work. \
 For more information about APT_CHECKPOINT_RESTART, see this [link](https://dataplatform.cloud.ibm.com/docs/content/dstage/com.ibm.swg.im.iis.ds.parjob.adref.doc/topics/checkpoint.html?context=cpdaas&locale=en&audience=wdp).
 
-### Q12, is DSaaS Anywhere instance single tenant or multi tenant?
+### Q12, is DSaaS Anywhere instance single tenant or multi-tenant?
 The control plane/design time portion is essentially just regular DataStage as a Service, meaning it is multi-tenant, however the data plane/runtime portion where the actual data execution occurs is single-tenant as the remote engines are hosted within the customer's own environment and running on the customer's own infrastructure.
 
 ### Q13, where can I find the logs?
