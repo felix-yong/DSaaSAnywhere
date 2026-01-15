@@ -18,6 +18,10 @@ This is a documentation related to using DataStage as a Service Anywhere.
 - Red Hat Enterprise Linux (RHEL) 8.8, 8.10, 9.2 and 9.4
 -	Ubuntu 20.04, 22.04, 24.04
 
+**Minimum hardware (See this [link](https://github.com/IBM/DataStage/tree/main/RemoteEngine/docker) for latest update) for docker/podman –** (Info below is as of 20260116)
+- You must have atleast 50GB of free space in /var in order to deploy the engine container. 200GB of free space is recommended.
+- You must have at least 2 cores and 4 GB memory, recommended is 4 cores and 8 GB memory, or more.
+
 **URL for SYD Data Center of CPDaaS/DSaaS –** au-syd.dai.cloud.ibm.com and api.au-syd.dai.cloud.ibm.com
 
 **DSaaS Anywhere LI –** https://www.ibm.com/support/customer/csol/terms/?id=i126-9243&lc=en
